@@ -31,6 +31,7 @@ const endGame = (e) => {
     document.querySelector(".start-screen").style.display = "block";
     document.querySelector(".game-canvas").style.display = "none";
     document.querySelector(".confirm-box").style.display = "none";
+    location.reload();
   });
   noButton.addEventListener("click", function () {
     document.querySelector(".confirm-box").style.display = "none";
@@ -48,13 +49,7 @@ const endGame = (e) => {
 
 const finishGame = (e) => {
   e.preventDefault();
-  document.querySelector(".start-screen").style.display = "block";
-  document.querySelector(".game-canvas").style.display = "none";
-  document.querySelector(".end-screen").style.display = "none";
-  questionNumber = 1;
-  gameScore = 0;
-  document.querySelector(".answer-log").innerText = ``;
-  document.querySelector(".answer-log").style.padding = "0px";
+  location.reload();
 };
 
 const checkCountry = (e) => {
