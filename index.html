@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu"
+    />
+    <title>Where's This Country?</title>
+  </head>
+  <body>
+    <div class="start-screen">
+      <div class="start-background"></div>
+      <h1>Where's This Country?</h1>
+      <button class="start-menu-button">Start Game</button>
+    </div>
+
+    <div class="game-canvas" style="display: none">
+      <div class="nav-bar-top">
+        <p class="question-title"></p>
+      </div>
+      <div class="game-grid"></div>
+      <div class="answer-log"></div>
+      <div class="nav-bar-bottom">
+        <p class="question-number"></p>
+        <p class="game-score"></p>
+        <p class="game-title">Where's This Country?</p>
+        <button class="return-menu-button">Main Menu</button>
+      </div>
+    </div>
+    <div class="end-screen" style="display: none">
+      <div class="start-background"></div>
+      <p class="score-log"></p>
+      <p class="result"></p>
+      <button class="game-score-button">Play Again</button>
+    </div>
+    <script src="script.js" charset="utf-8"></script>
+    <script src="countries.js" charset="utf-8"></script>
+  </body>
+</html>
