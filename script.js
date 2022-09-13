@@ -28,24 +28,12 @@ const endGame = (e) => {
   const yesButton = document.querySelector(".yes-button");
   const noButton = document.querySelector(".no-button");
   yesButton.addEventListener("click", function () {
-    document.querySelector(".start-screen").style.display = "block";
-    document.querySelector(".game-canvas").style.display = "none";
-    document.querySelector(".confirm-box").style.display = "none";
     location.reload();
   });
   noButton.addEventListener("click", function () {
     document.querySelector(".confirm-box").style.display = "none";
   });
 };
-//   if (confirm("Are you sure you want to end your current game?") == true) {
-//     document.querySelector(".start-screen").style.display = "block";
-//     document.querySelector(".game-canvas").style.display = "none";
-//     questionNumber = 1;
-//     gameScore = 0;
-//     document.querySelector(".answer-log").innerText = ``;
-//     document.querySelector(".answer-log").style.padding = "0px";
-//   }
-// };
 
 const finishGame = (e) => {
   e.preventDefault();
