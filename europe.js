@@ -17,6 +17,8 @@ const cityGrid = (cityName, grid) => {
   }
 };
 
+// generates the game grid for the European cities version
+
 const createSquareEurope = () => {
   const button = document.createElement("button");
   button.className = "map-button-europe";
@@ -91,14 +93,14 @@ const randomizeCity = () => {
   document.querySelector(
     ".game-score-europe"
   ).innerText = `Current score: ${gameScore}`;
-  // selects random country from array of 60 countries
+  // selects random city from array of 50 European cities
   const randomIndex = Math.floor(Math.random() * cityList.length);
   const random = cityList[randomIndex];
-  // selected country is spliced so it will not be repeated
-  // spliced country is pushed into a new array
+  // selected city is spliced so it will not be repeated
+  // spliced city is pushed into a new array
   splicedCities.push(cityList.splice(randomIndex, 1).toString());
   const questionSelect = random.replaceAll("-", " ");
-  // updates question with the selected country name
+  // updates question with the selected city name
   document.querySelector(
     ".question-title-europe"
   ).innerText = `Where is ${questionSelect}?`;
@@ -106,15 +108,15 @@ const randomizeCity = () => {
   document.querySelector(
     ".question-number-europe"
   ).innerText = `Question ${questionNumber}/10`;
-  // on click, checks if answer matches the selected country
+  // on click, checks if answer matches the selected city
   document
     .querySelector(".game-grid-europe")
     .addEventListener("click", function (e) {
       // function checks the clicked tile for its class name
       const selectedTile = e.target.className;
-      // code runs if class name of clicked tile includes the name of the selected country
+      // code runs if class name of clicked tile includes the name of the selected city
       // increases game score & question number by 1
-      // highlights correct tiles for 3 seconds
+      // highlights correct tiles in blue for 3 seconds
       const answer = document.getElementsByClassName(random);
       if (selectedTile.includes(random)) {
         for (let i = 0; i < answer.length; i++) {
@@ -137,9 +139,9 @@ const randomizeCity = () => {
         document.querySelector(
           ".question-number-europe"
         ).innerText = `Question ${questionNumber}/10`;
-        // code runs if class name of clicked tile does not include the name of the selected country
+        // code runs if class name of clicked tile does not include the name of the selected city
         // increases question number by 1
-        // highlights correct tiles for 3 seconds
+        // highlights correct tiles in red for 3 seconds
       } else {
         for (let i = 0; i < answer.length; i++) {
           answer[i].style.backgroundColor = "red";
@@ -206,10 +208,10 @@ const randomizeCity = () => {
           // resets question number and game score at end of game
           questionNumber = 1;
           gameScore = 0;
-          // spliced countries is added back into countryList array
-          // allows next round to be played with the full array of 60 countries again
+          // spliced cities is added back into cityList array
+          // allows next round to be played with the full array of 50 cities again
           cityList.push(...splicedCities);
-          // resets splicedCountries back to an empty array
+          // resets splicedCities back to an empty array
           splicedCities.length = 0;
         }, 3000);
       }

@@ -14,6 +14,9 @@ const generateSquare = (numberOfSquares) => {
 
 generateSquare(1080);
 
+// functions to add functionality to buttons
+
+// to initialize main game
 const startGame = (e) => {
   e.preventDefault();
   document.querySelector(".start-screen").style.display = "none";
@@ -21,6 +24,7 @@ const startGame = (e) => {
   randomizeCountry();
 };
 
+// to initialize city version
 const startGameEurope = (e) => {
   e.preventDefault();
   document.querySelector(".start-screen").style.display = "none";
@@ -28,6 +32,7 @@ const startGameEurope = (e) => {
   randomizeCity();
 };
 
+// to show or hide collapsible instructions
 const showInstructions = (e) => {
   e.preventDefault();
   const instructionBox = document.querySelector(".instructions-box");
@@ -43,6 +48,7 @@ const showInstructions = (e) => {
   }
 };
 
+// to terminate the main game early
 const endGame = (e) => {
   e.preventDefault();
   const confirmBox = document.querySelector(".confirm-box");
@@ -57,6 +63,7 @@ const endGame = (e) => {
   });
 };
 
+// to terminate the European cities game early
 const endGameEurope = (e) => {
   e.preventDefault();
   const confirmBox = document.querySelectorAll(".confirm-box")[1];
@@ -71,15 +78,13 @@ const endGameEurope = (e) => {
   });
 };
 
+// to reset the game from the post-game score screen
 const finishGame = (e) => {
   e.preventDefault();
   location.reload();
 };
 
-const checkCountry = (e) => {
-  const selectedTile = e.target.className;
-  return selectedTile;
-};
+// add 'click' event listeners to all buttons
 
 document
   .querySelector(".start-menu-button")

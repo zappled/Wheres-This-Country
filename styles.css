@@ -82,16 +82,18 @@ h1 {
 .blue {
   color: rgb(25, 86, 166);
   font-weight: bold;
+  text-decoration-line: underline;
 }
 
 .red {
   color: red;
   font-weight: bold;
+  text-decoration-line: underline;
 }
 
 .instructions-box {
   position: relative;
-  top: -321px;
+  top: -321.5px;
   left: 41.5px;
   background-color: rgb(230, 230, 230);
   width: 200px;
@@ -102,7 +104,7 @@ h1 {
   border-right: 2px solid rgb(25, 86, 166);
   font-size: 0.68em;
   padding: 0px 20px 20px 20px;
-  color: rgb(31, 77, 24);
+  color: rgb(25, 86, 166);
 }
 
 .nav-bar-top {
@@ -224,7 +226,6 @@ h1 {
   left: 88%;
   margin: auto;
   background: rgb(230, 230, 230);
-  border: none;
   width: 100px;
   height: 30px;
   border-radius: 10px;
@@ -319,14 +320,6 @@ h1 {
   background-color: grey;
   opacity: 0.5;
   border-radius: 5px;
-}
-
-.start-menu-button :hover {
-  background-color: grey;
-}
-
-.return-menu-button :hover {
-  opacity: 0.5;
 }
 
 /* European Cities version */
