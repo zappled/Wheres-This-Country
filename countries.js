@@ -178,7 +178,6 @@ const randomizeCountry = () => {
           answer[i].style.opacity = "";
         }, 3000);
       }
-
       document.querySelector(".answer-log").innerText = `Wrong answer!`;
       document.querySelector(".answer-log").style.padding = "10px";
       questionNumber++;

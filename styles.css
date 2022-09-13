@@ -272,3 +272,19 @@ h1 {
 .return-menu-button :hover {
   opacity: 0.5;
 }
+
+/* European Cities version */
+.game-grid-europe {
+  position: fixed;
+  top: 50px;
+  height: 490px;
+  width: 950px;
+  background-image: url(/images/world_map.jpg);
+  background-size: 60em;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-left: 5px solid rgb(20, 110, 180);
+  border-right: 5px solid rgb(132, 186, 124);
+  margin-left: auto;
+  margin-right: auto;
+}
