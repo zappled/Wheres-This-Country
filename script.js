@@ -21,6 +21,13 @@ const startGame = (e) => {
   randomizeCountry();
 };
 
+const startGameEurope = (e) => {
+  e.preventDefault();
+  document.querySelector(".start-screen").style.display = "none";
+  document.querySelector(".game-canvas-europe").style.display = "block";
+  randomizeCountry();
+};
+
 const endGame = (e) => {
   e.preventDefault();
   const confirmBox = document.querySelector(".confirm-box");
@@ -31,7 +38,7 @@ const endGame = (e) => {
     location.reload();
   });
   noButton.addEventListener("click", function () {
-    document.querySelector(".confirm-box").style.display = "none";
+    confirmBox.style.display = "none";
   });
 };
 
@@ -48,6 +55,10 @@ const checkCountry = (e) => {
 document
   .querySelector(".start-menu-button")
   .addEventListener("click", startGame);
+
+document
+  .querySelector(".start-button-europe")
+  .addEventListener("click", startGameEurope);
 
 document
   .querySelector(".return-menu-button")
