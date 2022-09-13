@@ -83,3 +83,135 @@ cityGrid("Kyiv", [700]);
 cityGrid("Odesa", [790]);
 cityGrid("Istanbul", [924]);
 cityGrid("Skopje", [922]);
+
+//////
+// controls sequence of events during gameplay
+const randomizeCity = () => {
+  // inputs the game score at the start of the round
+  document.querySelector(
+    ".game-score-europe"
+  ).innerText = `Current score: ${gameScore}`;
+  // selects random country from array of 60 countries
+  const randomIndex = Math.floor(Math.random() * cityList.length);
+  const random = cityList[randomIndex];
+  // selected country is spliced so it will not be repeated
+  // spliced country is pushed into a new array
+  splicedCities.push(cityList.splice(randomIndex, 1).toString());
+  const questionSelect = random.replaceAll("-", " ");
+  // updates question with the selected country name
+  document.querySelector(
+    ".question-title-europe"
+  ).innerText = `Where is ${questionSelect}?`;
+  // updates with the current question number
+  document.querySelector(
+    ".question-number-europe"
+  ).innerText = `Question ${questionNumber}/10`;
+  // on click, checks if answer matches the selected country
+  document
+    .querySelector(".game-grid-europe")
+    .addEventListener("click", function (e) {
+      // function checks the clicked tile for its class name
+      const selectedTile = e.target.className;
+      // code runs if class name of clicked tile includes the name of the selected country
+      // increases game score & question number by 1
+      // highlights correct tiles for 3 seconds
+      const answer = document.getElementsByClassName(random);
+      if (selectedTile.includes(random)) {
+        for (let i = 0; i < answer.length; i++) {
+          answer[i].style.backgroundColor = "rgb(25, 86, 166)";
+          answer[i].style.opacity = "0.5";
+          window.setTimeout(function () {
+            answer[i].style.backgroundColor = "";
+            answer[i].style.opacity = "";
+          }, 3000);
+        }
+        document.querySelector(
+          ".answer-log-europe"
+        ).innerText = `Correct answer!`;
+        document.querySelector(".answer-log-europe").style.padding = "10px";
+        gameScore++;
+        document.querySelector(
+          ".game-score-europe"
+        ).innerText = `Current score: ${gameScore}`;
+        questionNumber++;
+        document.querySelector(
+          ".question-number-europe"
+        ).innerText = `Question ${questionNumber}/10`;
+        // code runs if class name of clicked tile does not include the name of the selected country
+        // increases question number by 1
+        // highlights correct tiles for 3 seconds
+      } else {
+        for (let i = 0; i < answer.length; i++) {
+          answer[i].style.backgroundColor = "red";
+          answer[i].style.opacity = "0.5";
+          window.setTimeout(function () {
+            answer[i].style.backgroundColor = "";
+            answer[i].style.opacity = "";
+          }, 3000);
+        }
+        document.querySelector(
+          ".answer-log-europe"
+        ).innerText = `Wrong answer!`;
+        document.querySelector(".answer-log-europe").style.padding = "10px";
+        questionNumber++;
+        document.querySelector(
+          ".question-number-europe"
+        ).innerText = `Question ${questionNumber}/10`;
+      }
+      // removes event listener from .game-grid element before running function again
+      document
+        .querySelector(".game-grid-europe")
+        .replaceWith(
+          document.querySelector(".game-grid-europe").cloneNode(true)
+        );
+      // function repeats as long as questionNumber value is less than or equal to 10
+      if (questionNumber <= 10) {
+        randomizeCity();
+      } else if (questionNumber > 10) {
+        // removes event listeners, correct answer is still highlighted for 3 seconds
+        document.querySelector(
+          ".question-number-europe"
+        ).innerText = `Question ${questionNumber - 1}/10`;
+        document.querySelector(".question-title-europe").innerText = ``;
+        document
+          .querySelector(".game-grid-europe")
+          .replaceWith(
+            document.querySelector(".game-grid-europe").cloneNode(true)
+          );
+        // after 3 seconds, game brings up the end-game screen
+        window.setTimeout(function () {
+          document.querySelector(".game-canvas-europe").style.display = "none";
+          document.querySelector(".end-screen").style.display = "block";
+          // updates and shows the final score & result
+          document.querySelector(
+            ".score-log"
+          ).innerText = `Your score is ${gameScore}/10`;
+          if (gameScore >= 8) {
+            document.querySelector(
+              ".result"
+            ).innerText = `You're a high-flier!`;
+          } else if (gameScore >= 5) {
+            document.querySelector(
+              ".result"
+            ).innerText = `Passed with flying colours!`;
+          } else if (gameScore >= 2) {
+            document.querySelector(
+              ".result"
+            ).innerText = `Good effort, try again!`;
+          } else {
+            document.querySelector(
+              ".result"
+            ).innerText = `Oops, better luck next time!`;
+          }
+          // resets question number and game score at end of game
+          questionNumber = 1;
+          gameScore = 0;
+          // spliced countries is added back into countryList array
+          // allows next round to be played with the full array of 60 countries again
+          cityList.push(...splicedCities);
+          // resets splicedCountries back to an empty array
+          splicedCities.length = 0;
+        }, 3000);
+      }
+    });
+};

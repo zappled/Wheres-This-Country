@@ -32,41 +32,82 @@ body {
 }
 
 h1 {
-  font-size: 1.8em;
+  font-size: 1.7em;
   position: relative;
-  top: -550px;
-  left: -295px;
+  top: -515px;
+  left: -305px;
   text-align: center;
   color: rgb(25, 86, 166);
 }
 
 .start-menu-button {
   position: relative;
-  top: -500px;
-  left: 50px;
+  top: -460px;
+  left: 40px;
   border: none;
   width: 200px;
   height: 50px;
   border-radius: 10px;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(230, 230, 230);
   color: rgb(25, 86, 166);
+  border: 2px solid rgb(25, 86, 166);
 }
 
 .start-button-europe {
   position: relative;
-  top: -430px;
-  left: -153px;
+  top: -390px;
+  left: -163px;
   border: none;
   width: 200px;
   height: 50px;
   border-radius: 10px;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(230, 230, 230);
   color: rgb(25, 86, 166);
+  border: 2px solid rgb(25, 86, 166);
+}
+
+.instructions {
+  position: relative;
+  top: -320px;
+  left: -366px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+  color: rgb(25, 86, 166);
+  border: 2px solid rgb(25, 86, 166);
+}
+
+.blue {
+  color: rgb(25, 86, 166);
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+.instructions-box {
+  position: relative;
+  top: -321px;
+  left: 41.5px;
+  background-color: rgb(230, 230, 230);
+  width: 200px;
+  height: 145px;
+  border-radius: 0px 0px 10px 10px;
+  border-left: 2px solid rgb(25, 86, 166);
+  border-bottom: 2px solid rgb(25, 86, 166);
+  border-right: 2px solid rgb(25, 86, 166);
+  font-size: 0.68em;
+  padding: 0px 20px 20px 20px;
+  color: rgb(31, 77, 24);
 }
 
 .nav-bar-top {
   position: fixed;
-  top: 5px;
+  top: 0px;
   width: 950px;
   height: 50px;
   background-image: url(/images/start_menu_globe.jpg);
@@ -155,13 +196,13 @@ h1 {
 .question-number {
   position: absolute;
   left: 20px;
-  color: rgb(200, 200, 200);
+  color: rgb(230, 230, 230);
 }
 
 .game-score {
   position: absolute;
   left: 140px;
-  color: rgb(200, 200, 200);
+  color: rgb(230, 230, 230);
 }
 
 .answer-log {
@@ -182,13 +223,14 @@ h1 {
   top: 10px;
   left: 88%;
   margin: auto;
-  background: rgb(200, 200, 200);
+  background: rgb(230, 230, 230);
   border: none;
   width: 100px;
   height: 30px;
   border-radius: 10px;
   z-index: 1;
   color: rgb(25, 86, 166);
+  border: 2px solid rgb(132, 186, 124);
 }
 
 .end-screen {
@@ -203,12 +245,14 @@ h1 {
   top: -65%;
   left: 10%;
   margin: auto;
-  background: rgb(200, 200, 200);
+  background: rgb(230, 230, 230);
   border: none;
   width: 100px;
   height: 30px;
   border-radius: 10px;
   z-index: 1;
+  color: rgb(25, 86, 166);
+  border: 2px solid rgb(25, 86, 166);
 }
 
 .score-log {
@@ -222,9 +266,9 @@ h1 {
 .result {
   position: relative;
   top: -70%;
-  left: 5%;
+  left: 4%;
   color: rgb(132, 186, 124);
-  width: 200px;
+  width: 220px;
   text-align: center;
 }
 
@@ -232,7 +276,7 @@ h1 {
   position: absolute;
   top: -290px;
   left: 355px;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(230, 230, 230);
   width: 250px;
   height: 100px;
   border-radius: 25px;
@@ -257,7 +301,7 @@ h1 {
   border: none;
   padding: 5px 10px;
   border-radius: 10px;
-  color: rgb(200, 200, 200);
+  color: rgb(230, 230, 230);
 }
 
 .no-button {
@@ -268,7 +312,7 @@ h1 {
   border: none;
   padding: 5px 10px;
   border-radius: 10px;
-  color: rgb(200, 200, 200);
+  color: rgb(230, 230, 230);
 }
 
 .game-grid :hover {
@@ -291,7 +335,7 @@ h1 {
   top: 50px;
   height: 490px;
   width: 950px;
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(242, 244, 243);
   background-image: url(/images/europe_map.jpg);
   background-size: 39em;
   background-repeat: no-repeat;
@@ -321,7 +365,45 @@ h1 {
   height: 20px;
   font-size: 3px;
   color: black;
-  border: 1px dotted black;
+  border: 1px dotted transparent;
   text-align: center;
   margin-top: -2.1px;
+}
+
+.question-title-europe {
+  position: absolute;
+  left: 20px;
+  color: rgb(20, 110, 180);
+  font-weight: bold;
+}
+
+.question-number-europe {
+  position: absolute;
+  left: 20px;
+  color: rgb(200, 200, 200);
+}
+
+.game-score-europe {
+  position: absolute;
+  left: 140px;
+  color: rgb(200, 200, 200);
+}
+
+.answer-log-europe {
+  position: relative;
+  width: 140px;
+  top: 475px;
+  left: -41%;
+  color: rgb(20, 110, 180);
+  background-color: rgb(132, 186, 124);
+  border-radius: 10px;
+  z-index: 1;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.game-grid-europe :hover {
+  background-color: grey;
+  opacity: 0.5;
+  border-radius: 5px;
 }

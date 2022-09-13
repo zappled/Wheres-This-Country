@@ -25,7 +25,22 @@ const startGameEurope = (e) => {
   e.preventDefault();
   document.querySelector(".start-screen").style.display = "none";
   document.querySelector(".game-canvas-europe").style.display = "block";
-  randomizeCountry();
+  randomizeCity();
+};
+
+const showInstructions = (e) => {
+  e.preventDefault();
+  const instructionBox = document.querySelector(".instructions-box");
+  const instructionButton = document.querySelector(".instructions");
+  if (instructionBox.style.display === "none") {
+    instructionBox.style.display = "block";
+    instructionButton.style.borderRadius = "10px 10px 0px 0px";
+    instructionButton.style.borderBottom = "2px solid transparent";
+  } else {
+    instructionBox.style.display = "none";
+    instructionButton.style.borderRadius = "10px";
+    instructionButton.style.borderBottom = "2px solid rgb(25, 86, 166)";
+  }
 };
 
 const endGame = (e) => {
@@ -34,6 +49,20 @@ const endGame = (e) => {
   confirmBox.style.display = "block";
   const yesButton = document.querySelector(".yes-button");
   const noButton = document.querySelector(".no-button");
+  yesButton.addEventListener("click", function () {
+    location.reload();
+  });
+  noButton.addEventListener("click", function () {
+    confirmBox.style.display = "none";
+  });
+};
+
+const endGameEurope = (e) => {
+  e.preventDefault();
+  const confirmBox = document.querySelectorAll(".confirm-box")[1];
+  confirmBox.style.display = "block";
+  const yesButton = document.querySelectorAll(".yes-button")[1];
+  const noButton = document.querySelectorAll(".no-button")[1];
   yesButton.addEventListener("click", function () {
     location.reload();
   });
@@ -61,8 +90,16 @@ document
   .addEventListener("click", startGameEurope);
 
 document
+  .querySelector(".instructions")
+  .addEventListener("click", showInstructions);
+
+document
   .querySelector(".return-menu-button")
   .addEventListener("click", endGame);
+
+document
+  .querySelectorAll(".return-menu-button")[1]
+  .addEventListener("click", endGameEurope);
 
 document
   .querySelector(".game-score-button")
