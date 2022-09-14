@@ -21,7 +21,7 @@ body {
   position: relative;
   top: 10px;
   left: 280px;
-  background-image: url(/images/start_menu_globe.jpg);
+  background-image: url("/images/start_menu_globe.jpg");
   background-size: 50em;
   background-repeat: no-repeat;
   width: 660px;
@@ -112,7 +112,7 @@ h1 {
   top: 0px;
   width: 950px;
   height: 50px;
-  background-image: url(/images/start_menu_globe.jpg);
+  background-image: url("/images/start_menu_globe.jpg");
   background-size: 80em;
   margin-top: 0px;
   margin-left: 0px;
@@ -127,7 +127,7 @@ h1 {
   top: 530px;
   width: 950px;
   height: 50px;
-  background-image: url(/images/start_menu_globe.jpg);
+  background-image: url("/images/start_menu_globe.jpg");
   background-size: 80em;
   background-position: -80px 490px;
   margin-top: 0px;
@@ -142,7 +142,7 @@ h1 {
   top: 50px;
   height: 490px;
   width: 950px;
-  background-image: url(/images/world_map.jpg);
+  background-image: url("/images/world_map.jpg");
   background-size: 60em;
   background-repeat: no-repeat;
   padding: 20px;
@@ -329,7 +329,7 @@ h1 {
   height: 490px;
   width: 950px;
   background-color: rgb(249, 251, 246);
-  background-image: url(/images/europe_map.jpg);
+  background-image: url("/images/europe_map.jpg");
   background-size: 39em;
   background-repeat: no-repeat;
   background-position: 140px 0px;
