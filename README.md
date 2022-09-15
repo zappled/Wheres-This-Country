@@ -39,6 +39,21 @@ Upon answering, all tiles for the correct answer will light up in either blue or
 
 The game score and question number will update accordingly, and the function will continue looping until questionNumber updates to above 10. Upon answering the 10th question, all event listeners are removed to prevent any further clicking, and the end game screen will be brought up after a 3 second delay.
 
+At the end of the game, the array of 10 spliced countries is pushed back into the main country list array, allowing the next round to start with all 60 options again. The array of spliced countries is emptied during the process.
+
+////////////////////////////
+Key Features
+
+1. Start screen with instructions, and buttons for each game mode
+
+2. Game screen for country mode, which tracks the current question, question number and game score. Answers will be checked based on which tile is clicked.
+
+3. Game screen for European city mode, which tracks the current question, question number and game score. Answers will be checked based on which tile is clicked.
+
+4. Main menu button which allows the player to end the game early, and return to the main menu. Next round will restart from question 1 with the full allocation of countries or cities.
+
+5. End game screen which diplays a result based on the game score achieved. Also allows players to return to the main menu.
+
 ////////////////////////////
 Technologies Used
 
