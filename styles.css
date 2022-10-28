@@ -6,44 +6,44 @@
 body {
   max-width: 960px;
   height: 500px;
-  margin: auto;
   align-items: center;
+  margin: 0 auto;
 }
 
 .start-screen {
+  display: flex;
   width: 950px;
   height: 590px;
   border: 5px solid rgb(25, 86, 166);
   border-radius: 25px;
+  overflow: hidden;
 }
 
-.start-background {
-  position: relative;
-  top: 10px;
-  left: 280px;
+.left_container {
+  width: 40%;
+  height: 100%;
+}
+
+.right_container {
+  width: 60%;
+  height: 100%;
   background-image: url("/images/start_menu_globe.jpg");
   background-size: 50em;
-  background-repeat: no-repeat;
-  width: 660px;
-  height: 670px;
-  border-radius: 20px;
-  margin-top: -100px;
-  z-index: -1;
 }
 
 h1 {
   font-size: 1.7em;
   position: relative;
-  top: -515px;
-  left: -305px;
+  top: 50px;
+  left: 20px;
   text-align: center;
   color: rgb(25, 86, 166);
 }
 
 .start-menu-button {
   position: relative;
-  top: -460px;
-  left: 40px;
+  top: 100px;
+  left: 90px;
   border: none;
   width: 200px;
   height: 50px;
@@ -55,8 +55,8 @@ h1 {
 
 .start-button-europe {
   position: relative;
-  top: -390px;
-  left: -163px;
+  top: 130px;
+  left: 90px;
   border: none;
   width: 200px;
   height: 50px;
@@ -68,8 +68,8 @@ h1 {
 
 .instructions {
   position: relative;
-  top: -320px;
-  left: -366px;
+  top: 160px;
+  left: 90px;
   border: none;
   width: 200px;
   height: 50px;
@@ -93,8 +93,8 @@ h1 {
 
 .instructions-box {
   position: relative;
-  top: -321.5px;
-  left: 41.4px;
+  top: 158px;
+  left: 90px;
   background-color: rgb(230, 230, 230);
   width: 200px;
   height: 145px;
@@ -177,6 +177,7 @@ h1 {
   border: 1px dotted transparent;
   text-align: center;
   margin-top: -2.1px;
+  border: 1px solid black;
 }
 
 .game-title {
